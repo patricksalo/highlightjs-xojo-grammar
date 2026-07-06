@@ -1,0 +1,16 @@
+Public Class PaymentSummary
+  Public Property JobID As String
+  Public Property SubtotalAmount As Double
+  Public Property TaxAmount As Double
+  Public Property AmountPaid As Double
+
+  Public Function BalanceDue() As Double
+    Return (SubtotalAmount + TaxAmount) - AmountPaid
+  End Function
+End Class
+
+Dim summary As New PaymentSummary
+
+If summary.BalanceDue > 0.0 Then
+  System.DebugLog(summary.JobID + ": balance due")
+End If

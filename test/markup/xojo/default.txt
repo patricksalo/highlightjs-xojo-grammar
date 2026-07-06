@@ -1,0 +1,52 @@
+Dim decimalValue As Integer = 12345
+Dim doubleValue As Double = 123.45
+Dim exponentValue As Double = 1.23e-4
+Dim hexValue As Integer = &hFF00AA
+Dim octalValue As Integer = &o755
+Dim binaryValue As Integer = &b101010
+Dim xojoColor As Color = &c336699
+Dim xojoColorWithAlpha As Color = &c336699CC
+Dim isReady As Boolean = True
+Dim isArchived As Boolean = False
+Dim selectedJob As Object = Nil
+
+REM This is a legacy Xojo comment.
+' This is also a Xojo comment.
+// This is the preferred comment style.
+
+#Pragma BoundsChecking False
+#If TargetMacOS Then
+  System.DebugLog("macOS")
+#ElseIf TargetWindows Then
+  System.DebugLog("Windows")
+#Else
+  System.DebugLog("Other")
+#EndIf
+
+Dim quoteCharacter As String = """"
+Dim quotedText As String = "He said " + Chr(34) + "Hello from Xojo" + Chr(34) + "."
+
+Public Function FriendlyNameForInterface(interfaceName As String) As String
+  If interfaceName.Trim = "" Then
+    Return ""
+  End If
+
+  // Normalize platform-specific network interface names.
+  #If TargetMacOS Then
+    Select Case interfaceName
+    Case "en0"
+      Return "Wi-Fi"
+    Case "bridge100"
+      Return "Thunderbolt Bridge"
+    Else
+      Return interfaceName
+    End Select
+  #ElseIf TargetWindows Then
+    Return interfaceName.ReplaceAll("Ethernet adapter ", "")
+  #Else
+    Return interfaceName
+  #EndIf
+End Function
+
+Dim values As New Dictionary
+System.DebugLog(values.Lookup("JobID", "").StringValue)

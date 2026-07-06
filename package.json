@@ -1,0 +1,33 @@
+{
+  "name": "highlightjs-xojo-grammar",
+  "version": "1.0.0",
+  "description": "Xojo language grammar for highlight.js",
+  "type": "module",
+  "main": "src/languages/xojo.js",
+  "scripts": {
+    "test": "node --test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/patricksalo/highlightjs-xojo-grammar.git"
+  },
+  "keywords": [
+    "xojo",
+    "highlightjs",
+    "highlight.js",
+    "syntax-highlighting",
+    "grammar"
+  ],
+  "author": "Patrick Salo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/patricksalo/highlightjs-xojo-grammar/issues"
+  },
+  "homepage": "https://github.com/patricksalo/highlightjs-xojo-grammar#readme",
+  "devDependencies": {
+    "highlight.js": "^11.11.1"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
